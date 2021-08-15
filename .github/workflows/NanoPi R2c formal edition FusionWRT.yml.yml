@@ -19,7 +19,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  CONFIG_FILE: configs/lean_stable.config
+  CONFIG_FILE: configs/lean/lean.config
   DIY_SH: scripts/lean.sh
   IPV6MOD_IN_FIRMWARE: true
   KMODS_IN_FIRMWARE: true
@@ -267,7 +267,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: steps.tag.outputs.status == 'success' && !cancelled()
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           name: ${{ steps.tag.outputs.release_date }} r2c 正式版全插件
           tag_name: ${{ steps.tag.outputs.release_tag }}
@@ -287,7 +287,7 @@ jobs:
           keep_latest: 20
           delete_tags: true
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Delete Artifacts
         uses: geekyeggo/delete-artifact@v1
