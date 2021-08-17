@@ -1,4 +1,4 @@
-# NanoPi-R2C
+# NanoPi-R2C  已支持r2s和r2c通用，请往 https://github.com/DHDAXCW/NanoPi-R2S-2021 下载r2s固件刷到r2c设备上，兼容r2c，完全可以开机启动
 ### 基本设置
 - 默认ip：192.168.2.1
 - 账号 ：root
