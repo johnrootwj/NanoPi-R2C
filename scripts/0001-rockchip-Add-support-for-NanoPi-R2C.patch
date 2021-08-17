@@ -1,7 +1,7 @@
 From 874c6e64be1d462930b016d16f86cc9c91a4d2f9 Mon Sep 17 00:00:00 2001
 From: dEFIX <1132404+911gt3@users.noreply.github.com>
 Date: Tue, 17 Aug 2021 14:01:14 +0800
-Subject: [PATCH] rockchip: Add support for NanoPi R2C
+Subject: [PATCH] rockchip: Add support for NanoPi R2C Add r2c, directly compile R2S to be compatible with 2c
 
 ---
  target/linux/rockchip/armv8/config-5.10       |   1 +
