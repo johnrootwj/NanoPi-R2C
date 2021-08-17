@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: NanoPi R2c formal edition FusionWRT
+name: NanoPi R2c stable FusionWRT
 
 on:
   repository_dispatch:
@@ -19,7 +19,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  CONFIG_FILE: configs/lean/lean.config
+  CONFIG_FILE: configs/lean.config
   DIY_SH: scripts/lean.sh
   IPV6MOD_IN_FIRMWARE: true
   KMODS_IN_FIRMWARE: true
@@ -256,7 +256,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: ${{ steps.tag.outputs.release_date }} r2c 正式版_全插件
+          name: ${{ steps.tag.outputs.release_date }} r2c 正式版v全插件
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
@@ -279,3 +279,5 @@ jobs:
       - name: Delete Artifacts
         uses: geekyeggo/delete-artifact@v1
         with:
+          name: |
+            bin-archive
