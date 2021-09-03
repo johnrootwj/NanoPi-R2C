@@ -176,6 +176,7 @@ sed -i "s/OpenWrt /DHDAXCW $(TZ=UTC-8 date "+%Y%m%d") @ FusionWrt /g" package/le
 
 # Custom configs
 # git am $GITHUB_WORKSPACE/scripts/*.patch
+git am $GITHUB_WORKSPACE/patch/*.patch
 echo -e " DHDAXCW's FusionWrt built on "$(date +%Y.%m.%d)"\n -----------------------------------------------------" >> package/base-files/files/etc/banner
 
 # Add CUPInfo
