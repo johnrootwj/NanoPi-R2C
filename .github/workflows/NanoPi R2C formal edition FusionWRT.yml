@@ -58,12 +58,7 @@ jobs:
         rm -rf package/boot/uboot-rockchip target/linux/rockchip
         svn co https://github.com/DHDAXCW/x86_64_openwrt/branches/hello/package/boot/uboot-rockchip
         svn co https://github.com/DHDAXCW/x86_64_openwrt/branches/hello/target/linux/rockchip
-    - name: Cache
-      uses: klever1988/cachewrtbuild@main
-      with:
-        ccache: 'true'
-        prefix: ${{ github.workspace }}/openwrt
-        
+
     - name: Update Feeds
       id: update
       run: |
