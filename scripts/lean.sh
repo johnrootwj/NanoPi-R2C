@@ -162,7 +162,7 @@ sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 sed -i '/uci commit system/i\uci set system.@system[0].hostname='FusionWrt'' package/lean/default-settings/files/zzz-default-settings
-sed -i "s/OpenWrt /DHDAXCW @ FusionWrt $(TZ=UTC-8 date "+%Y%m%d") /g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/OpenWrt /JOHNROOT @ FusionWrt $(TZ=UTC-8 date "+%Y%m%d") /g" package/lean/default-settings/files/zzz-default-settings
 # find package/*/ feeds/*/ -maxdepth 6 -path "*luci-app-smartdns/luasrc/controller/smartdns.lua" | xargs -i sed -i 's/\"SmartDNS\")\, 4/\"SmartDNS\")\, 3/g' {} 
 # Test kernel 5.10
 # sed -i 's/5.4/5.10/g' target/linux/rockchip/Makefile
@@ -170,7 +170,7 @@ sed -i "s/OpenWrt /DHDAXCW @ FusionWrt $(TZ=UTC-8 date "+%Y%m%d") /g" package/le
 # Custom configs
 # git am $GITHUB_WORKSPACE/patches/lean/*.patch
 git am $GITHUB_WORKSPACE/patches/*.patch
-echo -e " DHDAXCW's FusionWrt built on "$(date +%Y.%m.%d)"\n -----------------------------------------------------" >> package/base-files/files/etc/banner
+echo -e " JOHNROOT's FusionWrt built on "$(date +%Y.%m.%d)"\n -----------------------------------------------------" >> package/base-files/files/etc/banner
 echo 'net.bridge.bridge-nf-call-iptables=0' >> package/base-files/files/etc/sysctl.conf
 echo 'net.bridge.bridge-nf-call-ip6tables=0' >> package/base-files/files/etc/sysctl.conf
 echo 'net.bridge.bridge-nf-call-arptables=0' >> package/base-files/files/etc/sysctl.conf
