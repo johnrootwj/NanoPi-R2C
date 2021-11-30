@@ -67,7 +67,7 @@ jobs:
         git clone --depth=1 https://github.com/coolsnowwolf/luci customfeeds/luci
         chmod +x ../scripts/*.sh
         ../scripts/hook-feeds.sh
-        cp ../target/linux/sunxi/* target/linux/sunxi/ -R
+        cp ../target/linux/sunxi/patches-4.14/204-dts-wifi-add-xradio.patch target/linux/sunxi/patches-5.4/
         cp ../package/kernel/xradio package/kernel/ -R
     
     - name: MOD index file
