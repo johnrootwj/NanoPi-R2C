@@ -1,4 +1,4 @@
-name: NanoPi PI stable FusionWRT
+name: Orange Pi Zero stable FusionWRT
 
 on:
   repository_dispatch:
@@ -251,7 +251,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: ${{ steps.tag.outputs.release_date }} NanoPi-PI Stablize_稳定版
+          name: ${{ steps.tag.outputs.release_date }} Orange Pi Zero Stablize_稳定版
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
