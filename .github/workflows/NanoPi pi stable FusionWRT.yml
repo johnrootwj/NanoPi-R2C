@@ -9,7 +9,7 @@ on:
   #   types: started
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/l2js/lede-OrangePiZero-xr819.git
   REPO_BRANCH: master
   CONFIG_FILE: configs/lean/pi.config
   DIY_SH: scripts/lean.sh
