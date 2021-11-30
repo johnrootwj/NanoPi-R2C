@@ -64,9 +64,9 @@ jobs:
         echo "::set-output name=OPENWRTROOT::$(echo $PWD)"
         mkdir customfeeds
         git clone --depth=1 https://github.com/coolsnowwolf/packages customfeeds/packages
-        git clone --depth=1 https://github.com/coolsnowwolf/luci customfeeds/lucihttps://raw.githubusercontent.com/melsem/openwrt-lede_xradio-xr819_soc-audio/master/packages_xradio-OpenWrt(Lede)-18.06.xx/add-patch_dts_file-wifi-xradio.patch
+        git clone --depth=1 https://github.com/coolsnowwolf/luci customfeeds/luci
+        wget https://raw.githubusercontent.com/melsem/openwrt-lede_xradio-xr819_soc-audio/master/packages_xradio-OpenWrt(Lede)-18.06.xx/add-patch_dts_file-wifi-xradio.patch
         patch -p1 < add-patch_dts_file-wifi-xradio.patch
-        wget 
         chmod +x ../scripts/*.sh
         ../scripts/hook-feeds.sh
     
