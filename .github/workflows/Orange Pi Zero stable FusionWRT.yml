@@ -55,6 +55,7 @@ jobs:
         git config --global user.name "GitHub"
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
+        git clone https://github.com/melsem/openwrt-lede_xradio-xr819_soc-audio
 
     - name: Update Feeds
       id: update
@@ -66,7 +67,8 @@ jobs:
         git clone --depth=1 https://github.com/coolsnowwolf/packages customfeeds/packages
         git clone --depth=1 https://github.com/coolsnowwolf/luci customfeeds/luci
         chmod +x ../scripts/*.sh
-        cp -R ../package/kernel/xradio package/kernel/
+        mkdir package/kernel/xradio
+        cp -R openwrt-lede_xradio-xr819_soc-audio/xradio-Openwrt_kernel-5.4.xx/* package/kernel/xradio/
         ../scripts/hook-feeds.sh
    
     - name: MOD index file
