@@ -69,7 +69,7 @@ jobs:
         chmod +x ../scripts/*.sh
         mkdir package/kernel/xradio
         cp -R lede_xr819/xradio-Openwrt_kernel-5.4.xx/* package/kernel/xradio/
-        #patch -p1 < ../scripts/add-on_wifi-mac80211.patch
+        patch -p1 < lede_xr819/packages_xradio-OpenWrt\(Lede\)-18.06.xx/add-patch_dts_file-wifi-xradio.patch
         ../scripts/hook-feeds.sh
    
     - name: MOD index file
