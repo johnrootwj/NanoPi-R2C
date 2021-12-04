@@ -1,4 +1,4 @@
-name: NanoPi R2C stable FusionWRT
+name: NanoPi R2C ALL FusionWRT
 
 on:
   repository_dispatch:

@@ -1,4 +1,4 @@
-name: NanoPi R2C stable FusionWRT
+name: NanoPi R2C docker FusionWRT
 
 on:
   repository_dispatch:
@@ -239,7 +239,7 @@ jobs:
         id: tag
         if: env.UPLOAD_RELEASE == 'true' && !cancelled()
         run: |
-          echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-Lean1"
+          echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-Lean0"
           echo "::set-output name=release_date::$(date +"%Y.%m.%d")"
           touch release.txt
           [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
@@ -251,7 +251,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: ${{ steps.tag.outputs.release_date }} NanoPi-R2C Stablize_全插件
+          name: ${{ steps.tag.outputs.release_date }} NanoPi-R2C Stablize_Docker
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
