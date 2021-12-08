@@ -1,11 +1,11 @@
 #!/bin/bash
-sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
-sudo -E apt-get -qq update
-sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004) tree
+#sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+apt-get update
+apt-get install $(curl -fsSL git.io/depends-ubuntu-2004) tree
 sudo apt-get -y install python3 git-core curl
-sudo -E apt-get -qq autoremove --purge
-sudo -E apt-get -qq clean
 sudo timedatectl set-timezone "Asia/Shanghai"
+git config --global user.email "git@github.com"
+git config --global user.name "GitHub"
 git clone https://github.com/coolsnowwolf/lede -b master openwrt
 cd openwrt
 mkdir customfeeds
