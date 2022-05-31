@@ -179,10 +179,3 @@ echo 'net.bridge.bridge-nf-filter-vlan-tagged=0' >> package/base-files/files/etc
 pushd package/lean/autocore/files/arm/sbin
 cp -f $GITHUB_WORKSPACE/scripts/cpuinfo cpuinfo
 popd
-# Add luci-app-adguardhome
-rm -rf package/lean/luci-app-adguardhome
-svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome package/lean/luci-app-adguardhome
-rm -rf ./feeds/packages/net/adguardhome
-svn co https://github.com/openwrt/packages/trunk/net/adguardhome feeds/packages/net/adguardhome
-sed -i '/\t)/a\\t$(STAGING_DIR_HOST)/bin/upx --lzma --best $(GO_PKG_BUILD_BIN_DIR)/AdGuardHome' ./feeds/packages/net/adguardhome/Makefile
-sed -i '/init/d' feeds/packages/net/adguardhome/Makefile
