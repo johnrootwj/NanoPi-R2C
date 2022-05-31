@@ -91,6 +91,10 @@ svn co https://github.com/zcy85611/Openwrt-Package/trunk/udpspeeder-tunnel
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 popd
 
+# fix yt8521
+rm -rf ./target/linux/rockchip/patches-5.4/600-net-phy-Add-driver-for-Motorcomm-YT85xx-PHYs.patch
+cp -f $GITHUB_WORKSPACE/scripts/600-net-phy-Add-driver-for-Motorcomm-YT85xx-PHYs.patch target/linux/rockchip/patches-5.4/600-net-phy-Add-driver-for-Motorcomm-YT85xx-PHYs.patch
+
 # Add cpufreq
 rm -rf package/lean/luci-app-cpufreq
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq feeds/luci/applications/luci-app-cpufreq
